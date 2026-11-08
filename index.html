@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Album Leveler – even loudness across your whole album</title>
+  <meta name="description" content="Album Leveler is an Audio Unit plug-in for Logic Pro. It measures every song in your album project and gives each track its own gain, so the whole record plays at an even loudness.">
+  <meta property="og:title" content="Album Leveler">
+  <meta property="og:description" content="Even loudness across your whole album, measured and set from inside Logic Pro.">
+  <meta property="og:image" content="https://albumleveler.marktiddy.co.uk/images/screenshot-album.png">
+  <meta property="og:url" content="https://albumleveler.marktiddy.co.uk/">
+  <link rel="canonical" href="https://albumleveler.marktiddy.co.uk/">
+  <meta name="theme-color" content="#16181b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316181b'/%3E%3Cg fill='%2362cfa0'%3E%3Crect x='6' y='12' width='4' height='14' rx='1.5'/%3E%3Crect x='14' y='12' width='4' height='14' rx='1.5'/%3E%3Crect x='22' y='12' width='4' height='14' rx='1.5'/%3E%3C/g%3E%3Crect x='4' y='9' width='24' height='2' rx='1' fill='%23e9ecef'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Album Leveler home">
+        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        Album Leveler
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav__links">
+          <li><a href="#why">Why</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#compatibility">Compatibility</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--small" href="#get">Get it</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Audio Unit plug-in for Logic Pro</p>
+          <h1>Your whole album, at one loudness.</h1>
+          <p class="lede">
+            Put Album Leveler on each song, play the album through, and press one button.
+            Every track gets its own gain, so the record plays at an even level from the first song to the last.
+          </p>
+          <div class="hero__actions">
+            <a class="btn" href="#get">Get Album Leveler</a>
+            <a class="btn btn--ghost" href="#how">See how it works</a>
+          </div>
+          <ul class="hero__facts" aria-label="Key facts">
+            <li><strong>Up to 64</strong> tracks</li>
+            <li><strong>One click</strong> to level</li>
+            <li><strong>Saved</strong> with your project</li>
+          </ul>
+        </div>
+        <figure class="hero__shot">
+          <img src="images/screenshot-album.png" width="620" height="690"
+               alt="Album Leveler's Album tab listing the thirteen songs of Backroom Stereo's album Rock and Roll Heart, each with its measured loudness, its applied gain and a loudness of -11.0 LUFS after the gain.">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Why</p>
+            <h2>Songs finished months apart rarely match.</h2>
+            <p>
+              Songs recorded, mixed and mastered at different times tend to end up at different loudness.
+              Put them in order and one song jumps out while the next sounds small. Matching them by ear means
+              playing back and forth and nudging faders, then doing it all again after a remaster.
+            </p>
+            <p>
+              Album Leveler measures each song the way loudness meters do (integrated LUFS, following the
+              ITU-R BS.1770 method). Then it sets every track to a shared target in one step.
+              It only changes level. Your EQ, dynamics and master stay as they are.
+            </p>
+          </div>
+
+          <!-- Before / after illustration built from the screenshot data -->
+          <figure class="levels" aria-labelledby="levels-caption">
+            <div class="levels__panel">
+              <div class="levels__head"><span>Before</span><span class="levels__spread">6.3 LU spread</span></div>
+              <div class="levels__bars" data-state="before">
+                <span style="--l:-9.6"></span><span style="--l:-10.3"></span><span style="--l:-12.4"></span><span style="--l:-8.7"></span><span style="--l:-9.1"></span>
+                <span style="--l:-14.8"></span><span style="--l:-8.5"></span><span style="--l:-10.9"></span><span style="--l:-9.4"></span><span style="--l:-11.6"></span>
+                <span style="--l:-12.1"></span><span style="--l:-13.6"></span><span style="--l:-12.9"></span>
+              </div>
+            </div>
+            <div class="levels__panel">
+              <div class="levels__head"><span>After</span><span class="levels__spread levels__spread--good">0.0 LU spread</span></div>
+              <div class="levels__bars" data-state="after">
+                <span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span>
+                <span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span>
+                <span style="--l:-11"></span><span style="--l:-11"></span><span style="--l:-11"></span>
+              </div>
+            </div>
+            <figcaption id="levels-caption">The thirteen songs of Rock and Roll Heart, measured between -8.5 and -14.8 LUFS, all levelled to a -11 LUFS target.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--tint" aria-labelledby="features-title">
+      <div class="wrap">
+        <p class="eyebrow">What you get</p>
+        <h2 id="features-title">Built for sequencing an album, not one song.</h2>
+        <ul class="features">
+          <li>
+            <h3>Measures while you listen</h3>
+            <p>Analysis runs while Logic is playing. Play each song through and it is measured. No bouncing, no exporting.</p>
+          </li>
+          <li>
+            <h3>One click for the whole album</h3>
+            <p>Calculate from any instance and every track gets its own gain towards your target loudness.</p>
+          </li>
+          <li>
+            <h3>Album overview</h3>
+            <p>See every song in one table: its loudness, its gain and where it lands afterwards, plus the album's spread before and after.</p>
+          </li>
+          <li>
+            <h3>Knows your track names</h3>
+            <p>Each instance picks up its Logic track name automatically. You can type your own if you prefer.</p>
+          </li>
+          <li>
+            <h3>You set the limits</h3>
+            <p>Choose a target from -18 to -6 LUFS and cap how far any song can move, so a quiet ballad can stay intimate on purpose.</p>
+          </li>
+          <li>
+            <h3>Safe by design</h3>
+            <p>Each track only ever applies its own gain. You get warnings about shared slots, mismatched settings and possible clipping.</p>
+          </li>
+          <li>
+            <h3>Saved with the project</h3>
+            <p>Gains, analysis and names are stored in the Logic project and come back when you reopen it.</p>
+          </li>
+          <li>
+            <h3>Built-in help</h3>
+            <p>A Help tab inside the plug-in explains every setting and the steps, so you don't need the manual open.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title">Five steps, about one album's listening time.</h2>
+        <ol class="steps">
+          <li>
+            <h3>Insert it on every song</h3>
+            <p>Add Album Leveler to each song's stereo track, last in the chain. Each instance takes its own track slot automatically.</p>
+          </li>
+          <li>
+            <h3>Pick a target</h3>
+            <p>Set the same Target loudness and Maximum correction on every instance. The default is -11 LUFS with a 6 dB limit.</p>
+          </li>
+          <li>
+            <h3>Reset, then play</h3>
+            <p>Press Reset all analysis, then play each song from start to finish. The status shows <em>Analysing…</em> while it measures.</p>
+          </li>
+          <li>
+            <h3>Calculate</h3>
+            <p>Press Calculate album levels on any instance. Every track's gain is set at once, and the Album tab shows the result.</p>
+          </li>
+          <li>
+            <h3>Listen and refine</h3>
+            <p>Play through the album in order. Loudness gets you close; your ears make the final call.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section section--tint" id="screenshots" aria-labelledby="shots-title">
+      <div class="wrap">
+        <p class="eyebrow">Screenshots</p>
+        <h2 id="shots-title">Three tabs, nothing hidden.</h2>
+        <p class="credit">Shown levelling <a href="https://backroomstereo.bandcamp.com/album/rock-and-roll-heart">Rock and Roll Heart</a> by Backroom Stereo.</p>
+
+        <div class="shots" data-shots>
+          <div class="shots__tabs" role="tablist" aria-label="Plug-in tabs">
+            <button role="tab" id="tab-track" aria-controls="panel-track" aria-selected="true">Track</button>
+            <button role="tab" id="tab-album" aria-controls="panel-album" aria-selected="false" tabindex="-1">Album</button>
+            <button role="tab" id="tab-help" aria-controls="panel-help" aria-selected="false" tabindex="-1">Help</button>
+          </div>
+
+          <div class="shots__panel" role="tabpanel" id="panel-track" aria-labelledby="tab-track">
+            <img src="images/screenshot-track.png" width="620" height="640" loading="lazy"
+                 alt="The Track tab for '12 Unfinished Business': track name from Logic, slot 12, a -11 LUFS target, 6 dB maximum correction, measured loudness of -13.6 LUFS and an applied gain of +2.6 dB.">
+            <div class="shots__text">
+              <h3>Track</h3>
+              <p>Everything about the song this instance sits on: its name (taken from Logic), its slot, the target
+                and limit, and the measurement: integrated loudness, sample peak, how much was played and the gain being applied.</p>
+            </div>
+          </div>
+
+          <div class="shots__panel" role="tabpanel" id="panel-album" aria-labelledby="tab-album" hidden>
+            <img src="images/screenshot-album.png" width="620" height="690" loading="lazy"
+                 alt="The Album tab: thirteen songs from '01 Another Song About Growing Up' to '13 The Last Song', with loudness from -8.5 to -14.8 LUFS and gains from -2.5 to +3.8 dB, all reading -11.0 after. The summary shows a 6.3 LU spread before and 0.0 LU after.">
+            <div class="shots__text">
+              <h3>Album</h3>
+              <p>Every Album Leveler in the project in one table. See which songs are analysed, the gain each one gets,
+                where it lands afterwards and how far apart the album is before and after. Calculate from here too.</p>
+            </div>
+          </div>
+
+          <div class="shots__panel" role="tabpanel" id="panel-help" aria-labelledby="tab-help" hidden>
+            <img src="images/screenshot-help.png" width="620" height="640" loading="lazy"
+                 alt="The Help tab, showing 'What it does' and an eight-step quick start.">
+            <div class="shots__text">
+              <h3>Help</h3>
+              <p>The quick start, what every setting does and the things worth knowing, inside the plug-in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compatibility -->
+    <section class="section" id="compatibility" aria-labelledby="compat-title">
+      <div class="wrap">
+        <p class="eyebrow">Compatibility</p>
+        <h2 id="compat-title">Made for Logic Pro on the Mac.</h2>
+
+        <div class="compat">
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">Supported hosts</caption>
+              <thead>
+                <tr><th scope="col">Host</th><th scope="col">Format</th><th scope="col">Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Logic Pro <span class="muted">(including Logic Pro X versions that run on macOS 11+)</span></th>
+                  <td>Audio Unit</td>
+                  <td><span class="pill pill--yes">Tested</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">GarageBand</th>
+                  <td>Audio Unit</td>
+                  <td><span class="pill">Expected to work, not tested</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Other Mac hosts <span class="muted">(e.g. Ableton Live, Reaper, Cubase)</span></th>
+                  <td>AU / VST3</td>
+                  <td><span class="pill">Expected to work, not tested</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Windows</th>
+                  <td>–</td>
+                  <td><span class="pill pill--no">Not available</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <dl class="reqs">
+            <div><dt>macOS</dt><dd>11 Big Sur or later</dd></div>
+            <div><dt>Mac</dt><dd>Apple Silicon (M1 and later)</dd></div>
+            <div><dt>Channels</dt><dd>Stereo or mono tracks</dd></div>
+            <div><dt>Tracks</dt><dd>Up to 64 per project</dd></div>
+          </dl>
+        </div>
+        <p class="note">
+          All instances need to run inside the same host process to share their measurements. In Logic, that is the
+          normal setup on Apple Silicon. If Logic runs under Rosetta, or hosts plug-ins out of process, the instances can't see each other.
+        </p>
+      </div>
+    </section>
+
+    <!-- Get it -->
+    <section class="section section--tint" id="get" aria-labelledby="get-title">
+      <div class="wrap">
+        <div class="get">
+          <div>
+            <p class="eyebrow">Get it</p>
+            <h2 id="get-title">Album Leveler 1.0</h2>
+            <p>Audio Unit and VST3 for macOS, with free updates for every 1.x version.</p>
+          </div>
+          <!-- The price and Gumroad link are set in one place: the STORE settings at the top of script.js. -->
+          <div class="get__card" data-store>
+            <p class="get__price" data-store-price>Coming soon</p>
+            <p class="muted">Signed and notarised installer for macOS. Secure checkout by Gumroad: card, PayPal or Apple Pay.</p>
+            <a class="btn btn--block is-disabled" aria-disabled="true" data-store-buy>Not yet available</a>
+          </div>
+        </div>
+
+        <!-- The plug-in's "Update" button opens this section (see version.json). -->
+        <div class="owners" id="update">
+          <div>
+            <h3>Already bought it? Get the latest version</h3>
+            <ol>
+              <li>Open your Gumroad receipt email and click <strong>View content</strong>, or sign in at
+                <a href="https://gumroad.com/library">gumroad.com/library</a> with the email you used to buy.</li>
+              <li>Download the installer. It's always the newest version.</li>
+              <li>Quit Logic, run the installer, then reopen Logic. Your projects and settings stay as they are.</li>
+            </ol>
+            <p class="muted">If Logic still shows the old version, open <strong>Logic Pro → Settings → Plug-in Manager</strong>,
+              select Album Leveler and choose <strong>Reset &amp; Rescan Selection</strong>.</p>
+          </div>
+          <div>
+            <h3>What's new</h3>
+            <dl class="changes">
+              <dt>1.0.0</dt>
+              <dd>First release.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">Questions</h2>
+
+        <details>
+          <summary>Does it change the sound of my songs?</summary>
+          <p>No. It only applies a clean gain change per track. There's no EQ, compression or limiting.</p>
+        </details>
+        <details>
+          <summary>Is it a limiter? Can it clip?</summary>
+          <p>It isn't a limiter. If a song gets a positive gain that could push its sample peak above 0 dBFS, the plug-in
+            warns you ("May clip"). Peaks are sample peaks, not true peaks, so check your final master with a true-peak meter.</p>
+        </details>
+        <details>
+          <summary>Do I have to play every song all the way through?</summary>
+          <p>For the most accurate result, yes. Integrated loudness describes a whole song. Playing part of a song still
+            gives a reading, but it only represents the part you played.</p>
+        </details>
+        <details>
+          <summary>What happens when I play a song again after calculating?</summary>
+          <p>Loudness is measured before the plug-in's own gain, so the correction isn't measured twice. If new analysis
+            arrives after a calculation, the plug-in tells you, and you can press Calculate again.</p>
+        </details>
+        <details>
+          <summary>Is it a certified loudness meter?</summary>
+          <p>No. It follows the ITU-R BS.1770 method (K-weighting, gating, channel summing) and measures standard test
+            signals within 0.02 LU, but it hasn't been through formal EBU conformance testing. It's built for matching
+            songs to each other, not for delivery compliance.</p>
+        </details>
+        <details>
+          <summary>Why does a mono track read 3 dB quieter?</summary>
+          <p>That's how the loudness standard works: a mono track measures 3 dB lower than the same audio on both
+            channels of a stereo track. Use stereo tracks so every song is measured the same way.</p>
+        </details>
+        <details>
+          <summary>How do updates work?</summary>
+          <p>Once a day the plug-in checks a small version file on this website. Nothing about you or your project
+            is sent. If a newer version is out, a button appears at the top of the plug-in that opens this page.
+            Nothing is installed automatically. You can switch the check off on the Help tab.</p>
+        </details>
+        <details>
+          <summary>Are my settings saved?</summary>
+          <p>Yes. Each instance stores its slot, settings, name, analysis and gain in the Logic project.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© 2026 Album Tools</p>
+      <p class="muted">Logic Pro, GarageBand and macOS are trademarks of Apple Inc. Album Leveler is not affiliated with Apple.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
