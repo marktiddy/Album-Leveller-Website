@@ -3,13 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Album Leveler – even loudness across your whole album</title>
-  <meta name="description" content="Album Leveler is an Audio Unit plug-in for Logic Pro. It measures every song in your album project and gives each track its own gain, so the whole record plays at an even loudness.">
-  <meta property="og:title" content="Album Leveler">
-  <meta property="og:description" content="Even loudness across your whole album, measured and set from inside Logic Pro.">
-  <meta property="og:image" content="https://albumleveler.marktiddy.co.uk/images/screenshot-album.png">
-  <meta property="og:url" content="https://albumleveler.marktiddy.co.uk/">
+  <title>Album Leveler – Loudness Matching Plugin for Logic Pro</title>
+  <meta name="description" content="Match the loudness of every song on your album in Logic Pro. Album Leveler measures each track in LUFS and sets its gain in one click. Audio Unit for Apple Silicon Macs, £7.">
   <link rel="canonical" href="https://albumleveler.marktiddy.co.uk/">
+
+  <!-- Social sharing previews (Facebook, WhatsApp, iMessage, X, Discord, Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Album Leveler">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Album Leveler – Loudness Matching Plugin for Logic Pro">
+  <meta property="og:description" content="Measure every song on your album and level them all in one click, from inside Logic Pro.">
+  <meta property="og:url" content="https://albumleveler.marktiddy.co.uk/">
+  <meta property="og:image" content="https://albumleveler.marktiddy.co.uk/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Album Leveler: your whole album, at one loudness. The plugin's Album tab showing thirteen songs levelled to the same loudness.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tells search engines this is a piece of software, with its price and requirements -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Album Leveler",
+    "description": "An Audio Unit plugin for Logic Pro that measures the loudness (LUFS) of every song in an album project and sets each track's gain so the whole album plays at an even loudness.",
+    "url": "https://albumleveler.marktiddy.co.uk/",
+    "image": "https://albumleveler.marktiddy.co.uk/images/og-image.png",
+    "screenshot": "https://albumleveler.marktiddy.co.uk/images/screenshot-album.png",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Audio plugin",
+    "operatingSystem": "macOS 11 or later (Apple Silicon)",
+    "softwareVersion": "1.0.0",
+    "author": { "@type": "Person", "name": "Mark Tiddy", "url": "https://marktiddy.co.uk" },
+    "offers": {
+      "@type": "Offer",
+      "price": "7.00",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://marktiddy.gumroad.com/l/albumleveler"
+    }
+  }
+  </script>
   <meta name="theme-color" content="#16181b">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316181b'/%3E%3Cg fill='%2362cfa0'%3E%3Crect x='6' y='12' width='4' height='14' rx='1.5'/%3E%3Crect x='14' y='12' width='4' height='14' rx='1.5'/%3E%3Crect x='22' y='12' width='4' height='14' rx='1.5'/%3E%3C/g%3E%3Crect x='4' y='9' width='24' height='2' rx='1' fill='%23e9ecef'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
@@ -41,7 +75,7 @@
     <section class="hero" id="top">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">Audio Unit plug-in for Logic Pro</p>
+          <p class="eyebrow">Album loudness matching plugin for Logic Pro</p>
           <h1>Your whole album, at one loudness.</h1>
           <p class="lede">
             Put Album Leveler on each song, play the album through, and press one button.
@@ -58,7 +92,7 @@
           </ul>
         </div>
         <figure class="hero__shot">
-          <img src="images/screenshot-album.png" width="620" height="690"
+          <img src="images/screenshot-album.png" width="620" height="690" fetchpriority="high"
                alt="Album Leveler's Album tab listing the thirteen songs of Backroom Stereo's album Rock and Roll Heart, each with its measured loudness, its applied gain and a loudness of -11.0 LUFS after the gain.">
         </figure>
       </div>
