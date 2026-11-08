@@ -5,7 +5,7 @@
 // While url is empty, the page shows "Coming soon" and the button stays disabled.
 // ---------------------------------------------------------------------------
 const STORE = {
-  url: "",
+  url: "https://marktiddy.gumroad.com/l/albumleveler",
   price: "£7",
 };
 
